@@ -1,5 +1,6 @@
 
 import React, { useState } from "react";
+import FinancialAnalysis from "./FinancialAnalysis.jsx";
 import {
   LayoutDashboard,
   ChartNoAxesCombined,
@@ -131,8 +132,10 @@ export default function App() {
                 ))}
               </div>
             </>
-          ) : (
-            <section className="placeholder-card">
+         ) : activePage === "Financial Analysis" ? (
+  <FinancialAnalysis />
+) : (
+  <section className="placeholder-card">
               <div className="feature-icon">
                 {React.createElement(
                   navigation.find(item => item.name === activePage).icon,
