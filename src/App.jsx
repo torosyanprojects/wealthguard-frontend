@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import FinancialAnalysis from "./FinancialAnalysis.jsx";
 import RiskPatterns from "./RiskPatterns.jsx";
+import Recommendations from "./Recommendations.jsx";
 
 import {
   LayoutDashboard,
@@ -158,9 +159,11 @@ export default function App() {
             </>
           ) : activePage === "Financial Analysis" ? (
             <FinancialAnalysis />
-          ) : activePage === "Risk Patterns" ? (
-            <RiskPatterns />
-          ) : (
+     ) : activePage === "Risk Patterns" ? (
+  <RiskPatterns />
+) : activePage === "Recommendations" ? (
+  <Recommendations />
+) : (
             <section className="placeholder-card">
               <div className="feature-icon">
                 {React.createElement(
