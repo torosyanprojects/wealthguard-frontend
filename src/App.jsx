@@ -26,6 +26,9 @@ export default function App() {
   const [activePage, setActivePage] = useState("Overview");
   const [menuOpen, setMenuOpen] = useState(false);
 
+  // Shared financial analysis result
+  const [analysisResult, setAnalysisResult] = useState(null);
+
   return (
     <div className="app-layout">
       <aside className={`sidebar ${menuOpen ? "open" : ""}`}>
@@ -158,12 +161,17 @@ export default function App() {
               </div>
             </>
           ) : activePage === "Financial Analysis" ? (
-            <FinancialAnalysis />
-     ) : activePage === "Risk Patterns" ? (
-  <RiskPatterns />
-) : activePage === "Recommendations" ? (
-  <Recommendations />
-) : (
+            <FinancialAnalysis
+              analysisResult={analysisResult}
+              setAnalysisResult={setAnalysisResult}
+            />
+          ) : activePage === "Risk Patterns" ? (
+            <RiskPatterns />
+          ) : activePage === "Recommendations" ? (
+            <Recommendations
+              analysisResult={analysisResult}
+            />
+          ) : (
             <section className="placeholder-card">
               <div className="feature-icon">
                 {React.createElement(
