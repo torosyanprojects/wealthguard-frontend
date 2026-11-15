@@ -169,10 +169,14 @@ export default function App() {
           ) : activePage === "Risk Patterns" ? (
             <RiskPatterns />
           ) : activePage === "Recommendations" ? (
-            <Recommendations
-              analysisResult={analysisResult}
-            />
-          ) : (
+  <Recommendations
+    analysisResult={analysisResult}
+  />
+) : activePage === "Reports" ? (
+  <Reports
+    analysisResult={analysisResult}
+  />
+) : (
             <section className="placeholder-card">
               <div className="feature-icon">
                 {React.createElement(
