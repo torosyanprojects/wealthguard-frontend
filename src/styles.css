@@ -1060,3 +1060,61 @@ h1 {
     padding: 16px;
   }
 }
+
+.report-export-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.report-export-actions .primary-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 15mm;
+  }
+
+  .sidebar,
+  .topbar,
+  .page-heading,
+  .footer,
+  .report-export-actions {
+    display: none !important;
+  }
+
+  .app-layout,
+  .main-content,
+  .page-content {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  body {
+    background: white !important;
+  }
+
+  .reports-page {
+    gap: 14px;
+  }
+
+  .reports-page .analysis-panel {
+    padding: 16px;
+    break-inside: auto;
+  }
+
+  .reports-page .metric-card,
+  .reports-page .recommendation-card {
+    break-inside: avoid;
+  }
+
+  .reports-page .recommendation-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
