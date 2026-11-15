@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import FinancialAnalysis from "./FinancialAnalysis.jsx";
 import RiskPatterns from "./RiskPatterns.jsx";
 import Recommendations from "./Recommendations.jsx";
+import Reports from "./Reports.jsx";
 
 import {
   LayoutDashboard,
