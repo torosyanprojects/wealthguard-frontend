@@ -29,7 +29,8 @@ export default function FinancialAnalysis({
   setAnalysisResult
 }) {
   const [values, setValues] = useState({});
-  const [result, setResult] = useState(null);
+  const result = analysisResult;
+  const setResult = setAnalysisResult;
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
