@@ -586,3 +586,159 @@ h1 {
     padding: 20px;
   }
 }
+
+/* =====================================
+   WEALTHGUARD — RISK PATTERNS DASHBOARD
+===================================== */
+
+.risk-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.risk-heading h1 {
+  font-size: 25px;
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: #183b30;
+}
+
+.risk-heading p {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.risk-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.risk-stat {
+  background: #ffffff;
+  border: 1px solid #e5ece8;
+  border-radius: 14px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.risk-stat span {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.risk-stat strong {
+  font-size: 25px;
+  font-weight: 700;
+  color: #1b5d45;
+}
+
+.risk-chart-card {
+  background: #ffffff;
+  border: 1px solid #e5ece8;
+  border-radius: 16px;
+  padding: 26px;
+  min-width: 0;
+}
+
+.risk-chart-card h2 {
+  font-size: 19px;
+  font-weight: 700;
+  color: #183b30;
+  margin: 0 0 9px;
+}
+
+.risk-chart-card > p {
+  color: #64748b;
+  font-size: 13px;
+  margin: 0 0 20px;
+}
+
+.risk-pattern-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.risk-pattern-card {
+  background: #f8fbf9;
+  border: 1px solid #e2ece6;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.risk-pattern-card h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #214b3b;
+  margin: 0 0 20px;
+}
+
+.risk-comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.risk-comparison > div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.risk-comparison span {
+  font-size: 12px;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.risk-comparison strong {
+  font-size: 25px;
+  color: #1b5d45;
+}
+
+.risk-comparison small {
+  color: #84918b;
+  font-size: 11px;
+}
+
+.risk-disclaimer {
+  background: #f1f7f3;
+  border: 1px solid #dbe9df;
+  border-radius: 14px;
+  padding: 22px;
+}
+
+.risk-disclaimer strong {
+  color: #1d5c42;
+  font-size: 14px;
+}
+
+.risk-disclaimer p {
+  color: #587265;
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 9px 0 0;
+}
+
+@media (max-width: 800px) {
+  .risk-summary,
+  .risk-pattern-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .risk-chart-card {
+    padding: 16px;
+  }
+
+  .risk-comparison {
+    gap: 10px;
+  }
+}
