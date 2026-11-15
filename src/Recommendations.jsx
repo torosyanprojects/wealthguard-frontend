@@ -173,7 +173,8 @@ export default function Recommendations({ analysisResult }) {
   )}
 </section>
 
-        {guidance.map((item) => {
+<div className="recommendations-list">
+  {guidance.map((item) => {
           const isOpen = expanded === item.id;
 
           return (
