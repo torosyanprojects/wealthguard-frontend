@@ -1118,3 +1118,26 @@ h1 {
     grid-template-columns: 1fr 1fr;
   }
 }
+
+/* WEALTHGUARD — PDF PAGE BREAK IMPROVEMENTS */
+
+@media print {
+  .reports-page .analysis-panel:nth-of-type(3) {
+    break-before: page;
+    page-break-before: always;
+  }
+
+  .reports-page .analysis-panel h3 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .reports-page .recommendation-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .reports-page .analysis-panel {
+    box-shadow: none !important;
+  }
+}
