@@ -23,6 +23,18 @@ export default function Reports({ analysisResult }) {
 
   return (
     <div className="reports-page">
+      {analysisResult && (
+  <div className="report-export-actions">
+    <button
+      type="button"
+      className="primary-button"
+      onClick={() => window.print()}
+    >
+      <FileText size={18} />
+      Export Report as PDF
+    </button>
+  </div>
+)}
       <div className="section-heading">
         <h2>Financial Assessment Report</h2>
         <p>
