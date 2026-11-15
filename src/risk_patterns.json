@@ -1,0 +1,43 @@
+{
+  "dataset": "OpenFundEx",
+  "split": "train",
+  "total_records": 216023,
+  "target": "target_bankrupt_1y",
+  "patterns": [
+    {
+      "Financial warning sign": "Weak liquidity",
+      "Bankrupt (%)": 57.05,
+      "Bankrupt sample size": 1283,
+      "Non-bankrupt (%)": 28.17,
+      "Non-bankrupt sample size": 157724
+    },
+    {
+      "Financial warning sign": "High liabilities/assets",
+      "Bankrupt (%)": 77.34,
+      "Bankrupt sample size": 984,
+      "Non-bankrupt (%)": 43.93,
+      "Non-bankrupt sample size": 160620
+    },
+    {
+      "Financial warning sign": "Negative profitability",
+      "Bankrupt (%)": 89.45,
+      "Bankrupt sample size": 1355,
+      "Non-bankrupt (%)": 44.17,
+      "Non-bankrupt sample size": 210429
+    },
+    {
+      "Financial warning sign": "Negative operating cash flow",
+      "Bankrupt (%)": 61.12,
+      "Bankrupt sample size": 427,
+      "Non-bankrupt (%)": 38.74,
+      "Non-bankrupt sample size": 75910
+    },
+    {
+      "Financial warning sign": "Negative net margin",
+      "Bankrupt (%)": 88.62,
+      "Bankrupt sample size": 1107,
+      "Non-bankrupt (%)": 36.42,
+      "Non-bankrupt sample size": 167017
+    }
+  ]
+}
