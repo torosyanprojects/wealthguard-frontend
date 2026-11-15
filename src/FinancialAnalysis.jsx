@@ -24,7 +24,10 @@ const example = {
   previous_revenue: 420000
 };
 
-export default function FinancialAnalysis() {
+export default function FinancialAnalysis({
+  analysisResult,
+  setAnalysisResult
+}) {
   const [values, setValues] = useState({});
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
