@@ -71,7 +71,7 @@ const guidance = [
   }
 ];
 
-export default function Recommendations() {
+export default function Recommendations({ analysisResult }) {
   const [expanded, setExpanded] = useState("liquidity");
 
   return (
@@ -94,7 +94,85 @@ export default function Recommendations() {
         </p>
       </div>
 
-      <div className="recommendations-list">
+      
+<section className="personalized-recommendations">
+  <div className="section-heading">
+    <h2>Company-Specific Recommendations</h2>
+    <p>
+      Actions based on your latest financial analysis.
+    </p>
+  </div>
+
+  {!analysisResult ? (
+    <div className="recommendations-info">
+      <Info size={20} />
+      <p>
+        No company analysis is available yet.
+        Open Financial Analysis, enter company
+        figures, and run an analysis to receive
+        recommendations.
+      </p>
+    </div>
+  ) : (
+    <>
+      <div className="model-status">
+        <strong>Analysis summary:</strong>{" "}
+        {analysisResult.issues_identified ?? 0}
+        {" "}financial warning signs identified.
+      </div>
+
+      {analysisResult.prediction_status ===
+        "insufficient_data" && (
+        <div className="recommendations-info">
+          <Info size={20} />
+          <p>
+            There is insufficient information for
+            AI model scoring. The recommendations
+            below are based on financial indicator
+            checks, not an AI bankruptcy prediction.
+          </p>
+        </div>
+      )}
+
+      <div className="recommendation-grid">
+        {(analysisResult.recommendations || []).map(
+          (item, index) => (
+            <article
+              className="recommendation-card"
+              key={index}
+            >
+              <h3>{item.problem}</h3>
+              <p>{item.explanation}</p>
+
+              <strong>Recommended actions</strong>
+
+              <ul>
+                {(item.recommended_actions || []).map(
+                  (action, i) => (
+                    <li key={i}>{action}</li>
+                  )
+                )}
+              </ul>
+
+              {item.monitor && (
+                <small>Monitor: {item.monitor}</small>
+              )}
+            </article>
+          )
+        )}
+      </div>
+
+      {(analysisResult.recommendations || [])
+        .length === 0 && (
+        <p>
+          No specific recommendations were
+          returned by the analysis.
+        </p>
+      )}
+    </>
+  )}
+</section>
+
         {guidance.map((item) => {
           const isOpen = expanded === item.id;
 
