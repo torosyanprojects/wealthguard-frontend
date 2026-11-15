@@ -111,7 +111,7 @@ export default function Reports({ analysisResult }) {
             </div>
           </section>
 
-          <section className="analysis-panel">
+       <section className="analysis-panel report-action-plan">
             <h3>Identified Problems and Action Plan</h3>
 
             {recommendations.length === 0 ? (
