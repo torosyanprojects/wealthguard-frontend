@@ -1,6 +1,8 @@
 
 import React, { useState } from "react";
 import FinancialAnalysis from "./FinancialAnalysis.jsx";
+import RiskPatterns from "./RiskPatterns.jsx";
+
 import {
   LayoutDashboard,
   ChartNoAxesCombined,
@@ -28,7 +30,9 @@ export default function App() {
       <aside className={`sidebar ${menuOpen ? "open" : ""}`}>
         <div className="brand">
           <ShieldCheck size={28} />
-          <span>WealthGuard <strong>AI</strong></span>
+          <span>
+            WealthGuard <strong>AI</strong>
+          </span>
         </div>
 
         <div className="sidebar-label">WORKSPACE</div>
@@ -74,8 +78,12 @@ export default function App() {
         <div className="page-content">
           <div className="page-heading">
             <div>
-              <p className="eyebrow">FINANCIAL INTELLIGENCE</p>
+              <p className="eyebrow">
+                FINANCIAL INTELLIGENCE
+              </p>
+
               <h1>{activePage}</h1>
+
               <p className="page-description">
                 Understand financial weaknesses, monitor key
                 indicators, and make informed business decisions.
@@ -87,15 +95,24 @@ export default function App() {
             <>
               <section className="welcome-card">
                 <div>
-                  <p className="eyebrow">WELCOME TO WEALTHGUARD</p>
-                  <h2>Understand your business finances.</h2>
+                  <p className="eyebrow">
+                    WELCOME TO WEALTHGUARD
+                  </p>
+
+                  <h2>
+                    Understand your business finances.
+                  </h2>
+
                   <p>
                     Identify financial warning signs and explore
                     practical actions before problems escalate.
                   </p>
+
                   <button
                     className="primary-button"
-                    onClick={() => setActivePage("Financial Analysis")}
+                    onClick={() =>
+                      setActivePage("Financial Analysis")
+                    }
                   >
                     Start financial analysis
                   </button>
@@ -108,44 +125,58 @@ export default function App() {
               </div>
 
               <div className="feature-grid">
-                {navigation.slice(1).map(({ name, icon: Icon }) => (
-                  <button
-                    className="feature-card"
-                    key={name}
-                    onClick={() => setActivePage(name)}
-                  >
-                    <div className="feature-icon">
-                      <Icon size={22} />
-                    </div>
-                    <h3>{name}</h3>
-                    <p>
-                      {name === "Financial Analysis"
-                        ? "Evaluate financial indicators and identify potential weaknesses."
-                        : name === "Risk Patterns"
-                        ? "Explore recurring financial warning signs."
-                        : name === "Recommendations"
-                        ? "Review preventive actions for financial problems."
-                        : "Explore clear and understandable financial reports."}
-                    </p>
-                    <span className="card-link">Explore →</span>
-                  </button>
-                ))}
+                {navigation.slice(1).map(
+                  ({ name, icon: Icon }) => (
+                    <button
+                      className="feature-card"
+                      key={name}
+                      onClick={() => setActivePage(name)}
+                    >
+                      <div className="feature-icon">
+                        <Icon size={22} />
+                      </div>
+
+                      <h3>{name}</h3>
+
+                      <p>
+                        {name === "Financial Analysis"
+                          ? "Evaluate financial indicators and identify potential weaknesses."
+                          : name === "Risk Patterns"
+                          ? "Explore recurring financial warning signs."
+                          : name === "Recommendations"
+                          ? "Review preventive actions for financial problems."
+                          : "Explore clear and understandable financial reports."}
+                      </p>
+
+                      <span className="card-link">
+                        Explore →
+                      </span>
+                    </button>
+                  )
+                )}
               </div>
             </>
-         ) : activePage === "Financial Analysis" ? (
-  <FinancialAnalysis />
-) : (
-  <section className="placeholder-card">
+          ) : activePage === "Financial Analysis" ? (
+            <FinancialAnalysis />
+          ) : activePage === "Risk Patterns" ? (
+            <RiskPatterns />
+          ) : (
+            <section className="placeholder-card">
               <div className="feature-icon">
                 {React.createElement(
-                  navigation.find(item => item.name === activePage).icon,
+                  navigation.find(
+                    (item) => item.name === activePage
+                  ).icon,
                   { size: 26 }
                 )}
               </div>
+
               <h2>{activePage}</h2>
+
               <p>
-                This section is being developed. We will connect it
-                to the WealthGuard AI financial analysis API.
+                This section is being developed. We will
+                connect it to the WealthGuard AI financial
+                analysis API.
               </p>
             </section>
           )}
@@ -158,3 +189,4 @@ export default function App() {
     </div>
   );
 }
+
